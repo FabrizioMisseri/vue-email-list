@@ -13,18 +13,21 @@ createApp({
 
     created() {
         for (let i = 0; i < 10; i++) {
+            
             axios
             .get("https://flynn.boolean.careers/exercises/api/random/mail")
             .then((resp) => {
-                this.mailAddresses.push(resp.data.response);
+                this.mail = resp.data.response;
+                this.mailAddresses.push(this.mail);
+                this.mail = "";
             })
-            
         }
     },
 
     data() {
         return{
             mailAddresses: [],
+            mail: "",
         }
     },
 
