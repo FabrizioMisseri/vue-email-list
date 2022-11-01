@@ -16,16 +16,14 @@ createApp({
             axios
             .get("https://flynn.boolean.careers/exercises/api/random/mail")
             .then((resp) => {
-                this.address = resp.data.response;
-                this.mailAddresses.push(address);
+                this.mailAddresses.push(resp.data.response);
             })
             
         }
     },
 
-    data(){
+    data() {
         return{
-            address: "",
             mailAddresses: [],
         }
     },
